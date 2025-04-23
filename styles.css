@@ -325,6 +325,14 @@ p {
     color: var(--accent-color); /* Optional: Add a distinct color */
 }
 
+.success-message {
+    margin-top: 1rem;
+    color: #00ff99; /* Success color */
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
 /* Social Icons */
 .social-icons {
     display: flex;

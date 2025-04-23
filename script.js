@@ -94,6 +94,25 @@ form.addEventListener('submit', (e) => {
     }
 });
 
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Display the success message
+    const successMessage = document.getElementById("successMessage");
+    successMessage.style.display = "block";
+
+    // Clear the form fields
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+
+    // Hide the success message after 5 seconds
+    setTimeout(() => {
+        successMessage.style.display = "none";
+    }, 5000);
+});
+
 // Neon Grid Animation for Home section
 const canvas = document.getElementById('home-canvas');
 const ctx = canvas.getContext('2d');
