@@ -193,3 +193,36 @@ educationBtn.addEventListener('click', () => {
     educationBtn.classList.add('active');
     skillsBtn.classList.remove('active');
 });
+
+// Typing animation functionality
+const typingElement = document.getElementById("typing-animation");
+const phrases = ["Web Developer", "Web Designer", "Software Engineer"];
+let currentPhraseIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+
+function typeAnimation() {
+    const currentPhrase = phrases[currentPhraseIndex];
+    if (isDeleting) {
+        currentCharIndex--;
+    } else {
+        currentCharIndex++;
+    }
+
+    typingElement.textContent = currentPhrase.slice(0, currentCharIndex);
+
+    if (!isDeleting && currentCharIndex === currentPhrase.length) {
+        // Pause before deleting
+        setTimeout(() => (isDeleting = true), 1000);
+    } else if (isDeleting && currentCharIndex === 0) {
+        // Move to the next phrase
+        isDeleting = false;
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+    }
+
+    const typingSpeed = isDeleting ? 100 : 150; // Adjust typing and deleting speed
+    setTimeout(typeAnimation, typingSpeed);
+}
+
+// Start the typing animation
+typeAnimation();
