@@ -1,0 +1,923 @@
+/* Custom properties for consistent theming */
+:root {
+    --primary-color: #00ff99;
+    --accent-color: #cc00ff;
+    --bg-dark: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text-light: #e0e0e0;
+    --glow-shadow: 0 0 20px rgba(204, 0, 255, 0.5);
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body styling with gradient background and fade-in animation */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, var(--bg-dark), #2c1e3b);
+    color: var(--text-light);
+    line-height: 1.6;
+    animation: fade-in 1s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header and Navbar */
+.navbar {
+    background: rgba(26, 26, 26, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.nav-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: var(--glow-shadow);
+    transition: transform 0.3s, text-shadow 0.3s;
+    margin-left: 1rem; /* Add space from the left */
+}
+
+.nav-brand:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(0, 255, 153, 1), 0 0 30px rgba(0, 255, 153, 0.7);
+}
+
+.navbar-nav {
+    gap: 2rem; /* Added spacing between navbar links */
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 0.2rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Hamburger menu */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-light);
+    margin: 5px 0;
+    transition: background 0.3s;
+}
+
+.hamburger:hover span {
+    background: var(--accent-color);
+}
+
+/* Sections */
+section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home {
+    position: relative;
+    overflow: hidden;
+}
+
+#home-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--bg-dark);
+}
+
+/* Typography */
+h1 {
+    font-size: 3rem;
+    color: #a537c1;
+    margin-bottom: 1rem;
+    font-weight: 900; /* Make the text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for emphasis */
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+p {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    text-align: justify; /* Justify the text */
+}
+
+.title-text {
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-shadow: var(--glow-shadow);
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.title-text:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(204, 0, 255, 0.8);
+}
+
+/* Profile picture */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 4px solid #51d0a8;
+    box-shadow: var(--glow-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(204, 0, 255, 0.7);
+}
+
+#about {
+    margin: 1in auto; /* One-inch margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 900px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add smooth transition */
+}
+
+.about-card:hover {
+    box-shadow: 0 0 20px rgba(204, 0, 255, 0.7), 0 0 40px rgba(204, 0, 255, 0.5); /* Glow effect */
+    transform: scale(1.02); /* Slightly enlarge the card */
+}
+
+.about-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 1rem;
+    border-radius: 50%;
+}
+
+.about-card .card-body {
+    padding: 1rem;
+    flex: 1;
+}
+
+.about-card h2 {
+    color: #cc00ff;
+    margin-bottom: 1rem;
+    font-weight: bold; /* Make the text bold */
+    font-size: 2rem; /* Optional: Increase the font size */
+}
+
+.about-card p {
+    margin-bottom: 0.5rem;
+    text-align: justify; /* Justify the text */
+}
+
+/* Bootstrap Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--glow-shadow);
+}
+
+.card-title {
+    color: var(--primary-color);
+}
+
+.card-text {
+    color: var(--text-light);
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    margin-top: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    background: var(--primary-color);
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+.form-feedback {
+    display: none; /* Initially hidden */
+    text-align: center; /* Center the text horizontally */
+    margin-top: 1rem; /* Add spacing above the feedback message */
+    font-size: 1rem; /* Adjust font size for readability */
+    color: var(--accent-color); /* Optional: Add a distinct color */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.social-icons a[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    color: var(--primary-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+    border: 1px solid var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background: #0d0d0d;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    min-height: 80px;
+}
+
+footer p {
+    font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
+    font-size: 1rem; /* Optional: Adjust font size */
+    color: var(--text-light); /* Keep the text color consistent */
+    margin-top: 0.5rem; /* Add spacing above if needed */
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem; /* Add spacing between icons and footer text */
+}
+
+.footer-social-icons a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* Fade-in animation for sections */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 2s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Focus states for accessibility */
+input:focus,
+textarea:focus,
+button:focus,
+.navbar-nav .nav-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column; /* Stack icon, text, and progress bar vertically */
+    align-items: flex-start; /* Align items to the start for better spacing */
+    padding: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text-light); /* Use light text color */
+    border: 1px solid var(--accent-color); /* Use accent color for the border */
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 140px; /* Fixed width to prevent overflow and ensure consistency */
+}
+
+.skill:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--accent-color); /* Use accent color for hover shadow */
+}
+
+/* Progress Bar */
+.progress {
+    background: #333;
+    border-radius: 5px;
+    height: 12px; /* Slightly smaller height for better fit */
+    margin-top: 0.3rem; /* Reduced margin for tighter spacing */
+    width: 100%; /* Full width of the skill container */
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.progress-bar {
+    background: #51d0a8;
+    height: 100%; /* Match progress container height */
+    text-align: center;
+    color: #fff;
+    font-size: 0.7rem; /* Smaller font size for better fit */
+    line-height: 12px; /* Align text vertically with progress bar height */
+    transition: width 0.5s ease-in-out;
+}
+
+/* Skills and Education Headings */
+#skills-section h3,
+#education-section h3 {
+    font-weight: bold; /* Make the headings bold */
+    font-size: 1.8rem; /* Optional: Increase the font size */
+    color: var(--accent-color); /* Optional: Add a distinct color */
+    margin-bottom: 1rem;
+}
+
+/* Education List */    
+.education-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    color: var(--text-light);
+}
+
+/* Education List Items */
+.education-list li {
+    font-weight: bold; /* Make the education list items bold */
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Education Container */
+.education-container {
+    display: flex;
+    flex-direction: column; /* Stack entries vertically */
+    gap: 1rem; /* Space between education entries */
+    margin-top: 1rem;
+}
+
+.education-entry {
+    display: flex;
+    align-items: center; /* Align text and image vertically */
+    justify-content: space-between; /* Space between text and image */
+    gap: 1rem; /* Space between text and image */
+    padding: 0.5rem;
+    background: var(--card-bg);
+    border: 2px solid var(--accent-color); /* Use accent color instead of green */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.education-entry:hover {
+    transform: scale(1.02); /* Slightly enlarge the card on hover */
+    box-shadow: 0 6px 12px rgba(255, 0, 251, 0.852); /* Add a glowing accent shadow on hover */
+}
+
+.education-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between text and image */
+}
+
+.education-text p {
+    margin: 0; /* Remove extra margin */
+    font-weight: normal; /* Make the school name not bold */
+    color: var(--text-light); /* Keep the text in light color */
+    line-height: 1.6; /* Adjust line spacing for better readability */
+}
+
+.education-content p strong {
+    font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
+    font-weight: bold; /* Keep the text bold */
+    color: var(--text-light); /* Keep the text color consistent */
+}
+
+.education-level {
+    display: block;
+    margin-top: 0.3rem; /* Add space above the education level */
+    font-weight: bold; /* Make the education level bold */
+    color: var(--accent-color); /* Optional: Use accent color for emphasis */
+}
+
+.education-school {
+    display: block;
+    margin-top: 0.3rem; /* Add space above the school name */
+    font-weight: normal; /* Keep the school name not bold */
+    color: var(--text-light); /* Use light text color */
+}
+
+.education-text p strong {
+    font-weight: bold; /* Keep the year bold */
+    color: var(--text-light); /* Use light text color instead of green */
+    display: block; /* Ensure proper spacing */
+    margin-bottom: 0.1rem; /* Reduce spacing below the year */
+}
+
+.education-text p {
+    margin: 0; /* Remove extra margin */
+    font-weight: normal; /* Make the school name not bold */
+    color: var(--text-light); /* Keep the school name in light text */
+    line-height: 1.4; /* Slightly tighter line spacing */
+}
+
+.education-image img {
+    width: 100px; /* Adjust image size */
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+    margin-bottom: 1rem; /* Add spacing below the image */
+    transition: transform 0.3s ease, border 0.3s ease; /* Smooth transition for zoom and border */
+}
+
+.education-image img:hover {
+    transform: scale(1.1); /* Zoom effect */
+    border: 3px solid var(--accent-color); /* Use accent color instead of green */
+}
+
+/* Education Timeline */
+.education-timeline {
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.5rem;
+    width: 4px;
+    background: var(--accent-color); /* Timeline color */
+    border-radius: 2px;
+}
+
+.education-item {
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 3.5rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.education-item .education-content {
+    background: linear-gradient(145deg, var(--card-bg), rgba(107, 33, 168, 0.1));
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-grow: 1;
+}
+
+.education-item .education-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(107, 33, 168, 0.4);
+}
+
+.education-item .education-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    width: 32px;
+    height: 32px;
+    background: var(--accent-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(107, 33, 168, 0.5);
+}
+
+.education-item h4 {
+    color: var(--accent-color);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.education-item p {
+    color: var(--text-light);
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    margin: 0;
+}
+
+.education-item img {
+    width: clamp(64px, 10vw, 96px);
+    height: clamp(64px, 10vw, 96px);
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.7);
+    padding: 0.25rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.education-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(107, 33, 168, 0.5);
+}
+
+.education-content h4 {
+    color: #00ff99; /* Set the text color to #00ff99 */
+    font-weight: bold; /* Keep the text bold */
+    margin-bottom: 0.5rem; /* Add spacing below the heading */
+}
+
+/* Certifications Section */
+#certifications {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.cert-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if the screen is too small */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 2rem; /* Add space between the cards */
+    margin-top: 1rem;
+}
+
+.cert-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    border: 2px solid #00ff99; /* Set the border color to #00ff99 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px; /* Set a fixed width for the cards */
+    position: relative; /* Ensure the label is positioned relative to the card */
+}
+
+.cert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 6px 12px rgba(204, 0, 255, 0.5); /* Add a glowing shadow */
+}
+
+.click-label {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #00ff99; /* Set the text color to #00ff99 */
+    text-align: center; /* Center the label */
+    margin-top: 0.5rem; /* Add spacing above the label */
+    font-style: italic; /* Make the text italic for a subtle effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and movement */
+    transform: translateY(10px); /* Start slightly below its position */
+}
+
+.cert-entry:hover .click-label {
+    opacity: 1; /* Make the label visible */
+    transform: translateY(0); /* Move it to its original position */
+}
+
+/* Certification Links */
+.cert-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.cert-link:hover {
+    transform: scale(1.05); /* Slightly enlarge the image link on hover */
+}
+
+.cert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(204, 0, 255, 0.5);
+}
+
+.cert-entry p {
+    font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
+    font-size: 1rem; /* Adjust font size for readability */
+    color: var(--text-light); /* Keep the text color consistent */
+    margin: 0.5rem 0; /* Reduce spacing above and below the text */
+    text-align: center; /* Center-align the text */
+    line-height: 1.4; /* Adjust line spacing for better readability */
+}
+
+/* Projects Section */
+#projects {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the project cards */
+    gap: 2rem; /* Add space between project cards */
+    margin-top: 1rem;
+}
+
+.project-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    border: 2px solid #00ff99; /* Set the border color to #00ff99 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px; /* Set a fixed width for the project cards */
+    text-align: center; /* Center-align the text */
+}
+
+.project-entry:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 255, 153, 0.5); /* Add a glowing shadow */
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 6px 12px rgba(0, 255, 153, 0.5); /* Add a glowing shadow */
+}
+
+.project-entry h3 {
+    font-size: 1.5rem;
+    color: #00ff99; /* Use the same color as the border */
+    margin-bottom: 0.5rem;
+}
+
+.project-entry p {
+    font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
+    font-size: 1rem; /* Adjust font size for readability */
+    color: var(--text-light); /* Keep the text color consistent */
+    margin: 0.5rem 0; /* Reduce spacing above and below the text */
+    text-align:initial; /* Initial the text for better alignment */
+    line-height: 1.5; /* Adjust line spacing for better readability */
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    color: var(--text-light);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.toggle-btn.active {
+    background: var(--primary-color);
+    color: #000;
+}
+
+.toggle-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+.toggle-section {
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Progress Bar */
+.progress {
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 15px; /* Reduced height for a smaller progress bar */
+    margin-top: 0.5rem;
+    width: 100%; /* Ensure it fits inside the card */
+}
+
+.progress-bar {
+    background: #51d0a8;
+    height: 100%; /* Match the height of the progress container */
+    text-align: center;
+    color: #fff;
+    font-size: 0.8rem; /* Smaller font size for better fit */
+    line-height: 15px; /* Align text vertically */
+    transition: width 0.5s ease-in-out;
+}
+
+/* Click Label */
+.click-label {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: var(--primary-color); /* Use primary color for emphasis */
+    text-align: center; /* Center the label */
+    margin-top: 0.5rem; /* Add spacing above the label */
+    font-style: italic; /* Make the text italic for a subtle effect */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .profile-pic { width: 180px; height: 180px; }
+    .contact-form { padding: 1.8rem; }
+    .nav-brand { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .navbar-nav { 
+        gap: 1.5rem; /* Adjusted spacing for mobile navbar */
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    .nav-brand { font-size: 1.4rem; }
+    .contact-form { padding: 1.5rem; }
+    .social-icons a { font-size: 1.5rem; }
+    .social-icons a[title]:hover::after { font-size: 0.7rem; padding: 0.2rem 0.5rem; }
+    .title-text { font-size: 1.2rem; }
+    .profile-pic { width: 150px; height: 150px; }
+}
+
+@media (min-width: 1200px) {
+    .container { max-width: 1400px; }
+    .project-grid, .cert-grid { gap: 3rem; }
+}
+
+/* Projects, Certifications, and Contact Headings */
+#projects h2,
+#certifications h2,
+#contact h2 {
+    font-weight: bold; /* Make the headings bold */
+    font-size: 2rem; /* Optional: Adjust font size for emphasis */
+    color: var(--accent-color); /* Optional: Add a distinct color */
+    margin-bottom: 1rem; /* Add spacing below the headings */
+}
