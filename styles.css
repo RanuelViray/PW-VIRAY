@@ -709,7 +709,6 @@ button:focus,
 
 .click-label {
     font-size: 0.9rem; /* Slightly smaller font size */
-    color: #00ff99; /* Set the text color to #00ff99 */
     text-align: center; /* Center the label */
     margin-top: 0.5rem; /* Add spacing above the label */
     font-style: italic; /* Make the text italic for a subtle effect */
@@ -743,7 +742,7 @@ button:focus,
 
 .cert-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(204, 0, 255, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 255, 217, 0.5);
 }
 
 .cert-entry p {
