@@ -245,3 +245,8 @@ function typeAnimation() {
 
 // Start the typing animation
 typeAnimation();
+
+// Service details functionality
+function showServiceDetails(serviceName) {
+    alert(`You clicked on ${serviceName}! More details coming soon.`);
+}

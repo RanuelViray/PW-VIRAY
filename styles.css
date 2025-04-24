@@ -827,6 +827,65 @@ button:focus,
     line-height: 1.5; /* Adjust line spacing for better readability */
 }
 
+/* Services Section */
+#services {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2rem; /* Adjust font size if needed */
+    font-weight: bold; /* Make the heading bold */
+    color: #cc00ff; /* Set the text color to #cc00ff */
+    margin-bottom: 1rem; /* Add spacing below the heading */
+    text-align: center; /* Ensure the heading is centered */
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 255, 153, 0.5);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.5;
+    text-align: left; /* Align the text to the left */
+}
+
 /* Toggle Buttons */
 .toggle-buttons {
     display: flex;
