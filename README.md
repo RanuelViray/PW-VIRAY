@@ -1,76 +1,78 @@
-Ranuel Glenn L. Viray Portfolio
-
-
-
-Overview
-
-
-
-This is a personal portfolio website showcasing my skills as a BSIT student at NU Lipa. It highlights my projects, certifications, and contact information, built with HTML, CSS, JavaScript, and Bootstrap.
-
-
-
-Features
-
-
-
-Responsive design with a neon/futuristic aesthetic.
-Interactive neon grid animation in the Home section with mouse-based glow effects.
-Bootstrap-powered navbar, grid system, and cards for projects/certifications.
-Accessible navigation with ARIA attributes and keyboard support.
-Contact form with client-side validation and feedback.
-Smooth scroll and fade-in animations for enhanced user experience.
-
-
-Setup Instructions
 
 
 
 
-Clone the repository: git clone <repo-url>
-Ensure the following files are in the project folder:
-index.html
-styles.css
-script.js
+# Ranuel Glenn L. Viray Portfolio
 
+## 📌 Overview
 
-Open index.html in a modern web browser (e.g., Chrome, Firefox).
+Welcome to my personal portfolio website!  
+I am **Ranuel Glenn L. Viray**, a BSIT student at **NU Lipa**. This website showcases my skills, projects, certifications, and contact information — all wrapped in a responsive, futuristic neon-themed design. It's built using **HTML, CSS, JavaScript, and Bootstrap**.
 
+---
 
-Ensure an internet connection for CDN resources (Bootstrap, Font Awesome, Google Fonts).
+## 🚀 Features
 
+- 🌐 **Responsive Design** with a **neon/futuristic aesthetic**  
+- 🟦 **Interactive Neon Grid Animation** in the Home section  
+- 🖱️ **Mouse-based glow effects** for an immersive UI  
+- 🔧 **Bootstrap-powered** navbar, grid system, and cards  
+- ♿ **Accessible navigation** using ARIA attributes & keyboard support  
+- ✉️ **Contact Form** with client-side validation and user feedback  
+- ✨ **Smooth scroll and fade-in animations** to enhance UX  
 
-Replace INF-231_Viray, Ranuel Glenn L..jpg with your profile picture in the project folder.
+---
 
-Technologies Used
+## 🛠️ Setup Instructions
 
-HTML5: Semantic structure with <main>, <article>, and <nav>.
-CSS3: Custom styles with variables, animations, and responsive design.
-JavaScript: Interactive features like navbar toggle, canvas animation, and form validation.
-Bootstrap 5: Navbar, grid system, and card components for responsive layouts.
-Font Awesome: Social media icons for GitHub, Facebook, and Instagram.
-Google Fonts: Orbitron font for the logo and headings.
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   ```
 
-External Resources
+2. Ensure the following files are in the project folder:
+   - `index.html`
+   - `styles.css`
+   - `script.js`
 
-Bootstrap 5: https://getbootstrap.com/
+3. Open `index.html` in a modern browser (Chrome, Firefox, etc.)
 
-Font Awesome: https://fontawesome.com/
+4. Make sure you're connected to the internet for CDN resources:
+   - Bootstrap
+   - Font Awesome
+   - Google Fonts
 
-Google Fonts (Orbitron): https://fonts.google.com/
+5. Replace:
+   - `INF-231_Viray, Ranuel Glenn L..jpg`  
+     with your profile picture using the same filename.
 
+---
 
+## 🧰 Technologies Used
 
-Author
+- **HTML5**: Semantic structure with `<header>`, `<main>`, `<footer>`  
+- **CSS3**: Custom styles, variables, animations, responsive layout  
+- **JavaScript**: Interactive navbar, canvas animations, form validation  
+- **Bootstrap 5**: Navbar, grid, cards, and responsive components  
+- **Font Awesome**: Icons for social media links  
+- **Google Fonts**: Orbitron for headings and branding  
 
+---
 
-Ranuel Glenn L. Viray 
+## 🌐 External Resources
 
-GitHub: ranuelviray 
+- [Bootstrap 5](https://getbootstrap.com/)  
+- [Font Awesome](https://fontawesome.com/)  
+- [Google Fonts – Orbitron](https://fonts.google.com/specimen/Orbitron)
 
-Facebook: ranueldave.viray 
+---
 
-Instagram: ranueldave 
+## 👤 Author
 
-Email: dviray223@gmail.com
+**Ranuel Glenn L. Viray**
+
+- 📂 GitHub: [@ranuelviray](https://github.com/ranuelviray)  
+- 📘 Facebook: [ranueldave.viray](https://facebook.com/ranueldave.viray)  
+- 📸 Instagram: [@ranueldave](https://instagram.com/ranueldave)  
+- 📧 Email: [dviray223@gmail.com](mailto:dviray223@gmail.com)
 
