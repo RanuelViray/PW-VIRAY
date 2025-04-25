@@ -97,20 +97,19 @@ form.addEventListener('submit', (e) => {
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    // Display the success message
-    const successMessage = document.getElementById("successMessage");
-    successMessage.style.display = "block";
+    // Display the SweetAlert success message
+    Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: 'Your message has been sent successfully!',
+        confirmButtonColor: '#00ff99',
+    });
 
     // Clear the form fields
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("subject").value = "";
     document.getElementById("message").value = "";
-
-    // Hide the success message after 5 seconds
-    setTimeout(() => {
-        successMessage.style.display = "none";
-    }, 5000);
 });
 
 // Neon Grid Animation for Home section
@@ -215,7 +214,7 @@ educationBtn.addEventListener('click', () => {
 
 // Typing animation functionality
 const typingElement = document.getElementById("typing-animation");
-const phrases = ["Web Developer", "Web Designer", "Software Engineer"];
+const phrases = ["IT Student","Web Developer", "Web Designer"];
 let currentPhraseIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
@@ -249,4 +248,13 @@ typeAnimation();
 // Service details functionality
 function showServiceDetails(serviceName) {
     alert(`You clicked on ${serviceName}! More details coming soon.`);
+}
+
+// Modal functionality
+function openModal() {
+    document.getElementById("profileModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("profileModal").style.display = "none";
 }
