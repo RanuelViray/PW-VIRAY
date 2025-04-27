@@ -245,11 +245,6 @@ function typeAnimation() {
 // Start the typing animation
 typeAnimation();
 
-// Service details functionality
-function showServiceDetails(serviceName) {
-    alert(`You clicked on ${serviceName}! More details coming soon.`);
-}
-
 // Modal functionality
 function openModal() {
     document.getElementById("profileModal").style.display = "flex";
