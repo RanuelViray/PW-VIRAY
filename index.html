@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
     <!-- Header with Bootstrap Navbar -->
@@ -27,7 +26,6 @@
                     <span></span>
                     <span></span>
                 </button>
-               
                 <div class="collapse navbar-collapse nav-links" id="navbarNav" role="navigation">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
@@ -62,11 +60,10 @@
         <!-- Profile Modal -->
         <div id="profileModal" class="modal">
             <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <span class="close-btn" onclick="closeModal()">×</span>
                 <h2>Ranuel Glenn L. Viray</h2>
                 <img src="Images/PIC2.jpg" alt="Full Profile Picture" class="modal-image">
             </div>
-            
         </div>
 
         <!-- About Section -->
@@ -267,19 +264,52 @@
         <!-- Contact Section -->
         <section id="contact" class="fade-in">
             <h2>Contact Me</h2>
-            <p>Let's connect! Fill out the form below to reach out for collaborations or inquiries.</p>
-            <form class="contact-form" action="#" id="contactForm">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p id="successMessage" class="success-message" style="display: none;">Your message has been sent successfully!</p>
+            <p>Let's connect! Fill out the form below or reach out directly using the contact details.</p>
+            <div class="contact-card">
+                <div class="container">
+                    <div class="row">
+                        <!-- Contact Form -->
+                        <div class="col-lg-6 col-md-12 contact-form-container">
+                            <form class="contact-form" action="#" id="contactForm">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                                <button type="submit">Send Message</button>
+                            </form>
+                            <p id="successMessage" class="success-message" style="display: none;">Your message has been sent successfully!</p>
+                        </div>
+                        <!-- Contact Information -->
+                        <div class="col-lg-6 col-md-12 contact-info">
+                            <h3>Get in Touch</h3>
+                            <ul>
+                                <li>
+                                    <span>Email: dviray223@gmail.com</span>
+                                    <a href="mailto:ranuelviray@example.com" aria-label="Email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span>Phone: 09761442049</span>
+                                    <a href="tel:+631234567890" aria-label="Phone">
+                                        <i class="fas fa-phone"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span>Location: Lipa City, Batangas, Philippines</span>
+                                    <a href="https://maps.google.com" target="_blank" aria-label="Location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -291,7 +321,6 @@
             <a href="https://www.facebook.com/ranueldave.viray" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/ranueldave/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        
         <p>© 2025 Ranuel Glenn L.Viray | All rights reserved.</p>
     </footer>
 

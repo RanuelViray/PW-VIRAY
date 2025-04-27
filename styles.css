@@ -5,7 +5,7 @@
     --bg-dark: #1a1a1a;
     --card-bg: #2a2a2a;
     --text-light: #e0e0e0;
-    --glow-shadow: 0 0 20px rgba(204, 0, 255, 0.5);
+    --glow-shadow: 0 0 20rep rgba(204, 0, 255, 0.5);
 }
 
 /* Global styles */
@@ -265,15 +265,30 @@ p {
     color: var(--text-light);
 }
 
-/* Contact Form */
-.contact-form {
-    max-width: 600px;
+/* Contact Form and Info Combined */
+.contact-card {
+    max-width: 900px;
     width: 100%;
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--accent-color);
     margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover {
+    box-shadow: var(--glow-shadow);
+    transform: scale(1.02);
+}
+
+.contact-form-container {
+    padding-right: 1rem;
+}
+
+.contact-form {
+    width: 100%;
 }
 
 .contact-form label {
@@ -294,6 +309,22 @@ p {
     background: var(--bg-dark);
     color: var(--text-light);
     font-size: 1rem;
+    transition: all 0.3s ease; /* Smooth transition for animations */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* No shadow initially */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00ff99; /* Green border on focus */
+    box-shadow: 0 0 10px #00ff99; /* Green glowing shadow */
+    outline: none; /* Remove default outline */
+    transform: scale(1.02); /* Slightly enlarge the field */
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-color: #00ff99; /* Green border on hover */
+    box-shadow: 0 0 6px #00ff99; /* Subtle green shadow */
 }
 
 .contact-form textarea {
@@ -331,6 +362,51 @@ p {
     font-size: 1.2rem;
     text-align: center;
     font-weight: bold;
+}
+
+/* Contact Information */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    border-left: 1px solid var(--accent-color);
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.contact-info li span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.contact-info li a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-info li a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
 }
 
 /* Social Icons */
@@ -1023,7 +1099,10 @@ button:focus,
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
     .profile-pic { width: 180px; height: 180px; }
-    .contact-form { padding: 1.8rem; }
+    .contact-form-container { padding-right: 0; }
+    .contact-info { padding-left: 0; border-left: none; margin-top: 2rem; }
+    .contact-info li { font-size: 0.9rem; }
+    .contact-info li a { font-size: 1.3rem; }
     .nav-brand { font-size: 1.6rem; }
 }
 
@@ -1038,11 +1117,18 @@ button:focus,
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     .nav-brand { font-size: 1.4rem; }
-    .contact-form { padding: 1.5rem; }
     .social-icons a { font-size: 1.5rem; }
     .social-icons a[title]:hover::after { font-size: 0.7rem; padding: 0.2rem 0.5rem; }
     .title-text { font-size: 1.2rem; }
     .profile-pic { width: 150px; height: 150px; }
+    .contact-card { padding: 1.5rem; }
+    .contact-info h3 { font-size: 1.5rem; }
+    .contact-info li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .contact-info li a { align-self: flex-end; }
 }
 
 @media (min-width: 1200px) {
@@ -1064,8 +1150,4 @@ button:focus,
 #contact {
     margin-top: 2rem;
     text-align: center;
-    background: linear-gradient(135deg, #1a1a1a, #2c1e3b); /* Add a gradient background */
-    padding: 2rem; /* Add padding for spacing */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
 }
