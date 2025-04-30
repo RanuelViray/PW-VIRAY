@@ -191,30 +191,41 @@ skills.forEach(skill => {
     });
 });
 
-// Toggle functionality for skills and education sections
-const skillsBtn = document.getElementById('skills-btn');
-const educationBtn = document.getElementById('education-btn');
-const skillsSection = document.getElementById('skills-section');
-const educationSection = document.getElementById('education-section');
-
-// Add event listeners for toggle buttons
-skillsBtn.addEventListener('click', () => {
-    skillsSection.classList.remove('hidden');
-    educationSection.classList.add('hidden');
-    skillsBtn.classList.add('active');
-    educationBtn.classList.remove('active');
+// Toggle functionality for skills, education, and hobbies sections
+document.getElementById("skills-btn").addEventListener("click", function () {
+    showSection("skills-section", this);
+});
+document.getElementById("education-btn").addEventListener("click", function () {
+    showSection("education-section", this);
+});
+document.getElementById("hobbies-btn").addEventListener("click", function () {
+    showSection("hobbies-section", this);
 });
 
-educationBtn.addEventListener('click', () => {
-    educationSection.classList.remove('hidden');
-    skillsSection.classList.add('hidden');
-    educationBtn.classList.add('active');
-    skillsBtn.classList.remove('active');
-});
+function showSection(sectionId, button) {
+    const sections = document.querySelectorAll(".toggle-section");
+    const buttons = document.querySelectorAll(".toggle-btn");
+
+    sections.forEach((section) => section.classList.add("hidden"));
+    buttons.forEach((btn) => btn.classList.remove("active"));
+
+    document.getElementById(sectionId).classList.remove("hidden");
+    button.classList.add("active");
+}
+
+// Toggle hobby details on click
+function toggleHobbyDetails(hobbyItem) {
+    const details = hobbyItem.querySelector(".hobby-details");
+    if (details.classList.contains("visible")) {
+        details.classList.remove("visible");
+    } else {
+        details.classList.add("visible");
+    }
+}
 
 // Typing animation functionality
 const typingElement = document.getElementById("typing-animation");
-const phrases = ["IT Student","Web Developer", "Web Designer"];
+const phrases = ["IT Student", "Problem Solver", "Tech Enthusiast"];
 let currentPhraseIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
@@ -247,9 +258,9 @@ typeAnimation();
 
 // Modal functionality
 function openModal() {
-    document.getElementById("profileModal").style.display = "flex";
+    document.getElementById("profileModal").style.display = "none";
 }
 
 function closeModal() {
-    document.getElementById("profileModal").style.display = "none";
+    document.getElementById("profileModal").style.display = "flex";
 }
