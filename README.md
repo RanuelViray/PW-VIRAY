@@ -9,6 +9,10 @@
 Welcome to my personal portfolio website!  
 I am **Ranuel Glenn L. Viray**, a BSIT student at **NU Lipa**. This website showcases my skills, projects, certifications, and contact information — all wrapped in a responsive, futuristic neon-themed design. It's built using **HTML, CSS, JavaScript, and Bootstrap**.
 
+
+
+**View site live:** [https://ranuelviray.github.io/PW-VIRAY/](https://ranuelviray.github.io/PW-VIRAY/)
+
 ---
 
 ## 🚀 Features
@@ -27,7 +31,7 @@ I am **Ranuel Glenn L. Viray**, a BSIT student at **NU Lipa**. This website show
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/RanuelViray/PW-VIRAY.git
    ```
 
 2. Ensure the following files are in the project folder:
